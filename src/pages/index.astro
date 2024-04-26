@@ -1,9 +1,10 @@
 ---
+import { changeLanguage } from 'i18next';
 import Layout from '../layouts/Layout.astro';
+
+changeLanguage('es');
 ---
 
 <Layout title="About">
-  <main>
-    <p>About</p>
-  </main>
+  <p class="text-white">About</p>
 </Layout>

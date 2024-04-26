@@ -1,0 +1,50 @@
+---
+import i18next, { t } from 'i18next';
+// @ts-ignore
+import { localizePath } from 'astro-i18next';
+import { navigation } from './constants';
+import { padStart } from '../../utils/number';
+import Dropdown from '../dropdown/dropdown';
+---
+
+<nav class="flex justify-between">
+  <Dropdown
+    client:visible
+    onClick=""
+    value={i18next.language}
+    options={[
+      { label: 'en', value: 'en' },
+      { label: 'es', value: 'es' },
+    ]}
+  />
+
+  <div class="flex">
+    {
+      navigation.map(({ name, href }, index) => (
+        <a href={localizePath(href)}>
+          <div class="flex text-xs text-neon-green tracking-widest px-4 py-2">
+            {padStart(index + 1)}.
+            <p class="text-xs text-white hover:text-neon-green pl-1">
+              {t(name)}
+            </p>
+          </div>
+        </a>
+      ))
+    }
+    <div
+      class="flex text-sm text-neon-green tracking-wider px-4 py-2 border border-solid rounded"
+    >
+      {t('resume')}
+    </div>
+  </div>
+</nav>
+<div class="h-full flex">
+  <div class="w-full">
+    <slot />
+  </div>
+  <div class="h-full flex items-end pb-10">
+    <p class="text-white [writing-mode:vertical-lr] [letter-spacing:0.2rem]">
+      {t('email')}
+    </p>
+  </div>
+</div>
