@@ -15,11 +15,11 @@ function classNames(...classes: string[]) {
 export default function Dropdown({
   options,
   value,
-  onClick,
+  onclick,
 }: {
   options: Option[];
   value: string;
-  onClick: any;
+  onclick: any;
 }) {
   return (
     <Menu as="div" className="relative inline-block text-right">
@@ -46,7 +46,7 @@ export default function Dropdown({
                 as="button"
                 key={value}
                 className="flex"
-                onClick={() => onClick(value)}
+                onClick={() => onclick(value)}
               >
                 {({ active }) => (
                   <p

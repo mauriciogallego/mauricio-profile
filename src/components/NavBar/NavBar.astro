@@ -4,19 +4,11 @@ import i18next, { t } from 'i18next';
 import { localizePath } from 'astro-i18next';
 import { navigation } from './constants';
 import { padStart } from '../../utils/number';
-import Dropdown from '../dropdown/dropdown';
+import SelectorLanguage from '../selectorLanguage/selectorLanguage';
 ---
 
 <nav class="flex justify-between">
-  <Dropdown
-    client:visible
-    onClick=""
-    value={i18next.language}
-    options={[
-      { label: 'en', value: 'en' },
-      { label: 'es', value: 'es' },
-    ]}
-  />
+  <SelectorLanguage value={i18next.language} client:visible />
 
   <div class="flex">
     {
