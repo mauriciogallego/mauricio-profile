@@ -1,10 +1,54 @@
 ---
-import { changeLanguage } from 'i18next';
+import { changeLanguage, t } from 'i18next';
 import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title/Title.astro';
+import { technologies } from '../constants';
 
 changeLanguage('es');
 ---
 
 <Layout title="About">
-  <p class="text-white">About</p>
+  <div class="py-60">
+    <p class="tracking-widest text-neon-green">{t('greetings')}</p>
+    <h1 class="tracking-widest text-white text-7xl font-bold mt-3">
+      Mauricio Gallego
+    </h1>
+    <h2 class="tracking-widest text-white-dark text-6xl font-bold mt-2">
+      {t('mainInfo')}
+    </h2>
+    <p class="text-white-dark font-thin w-1/2 tracking-wider mt-5 leading-8">
+      {t('aboutMyself')}<span class="text-neon-green">Sysgarage.</span>
+    </p>
+  </div>
+  <div class="pb-12">
+    <Title header="about" />
+    <div class="w-1/2 mt-10 space-y-4">
+      <p class="font-thin tracking-wider text-white-dark">
+        {t('descriptionAboutMe')}
+      </p>
+      <p class="font-thin tracking-wider text-white-dark">
+        {t('descriptionAboutMeTwo')}
+      </p>
+      <p class="font-thin tracking-wider text-white-dark">
+        {t('descriptionAboutMeThree')}
+      </p>
+      <p class="font-thin tracking-wider text-white-dark">
+        {t('descriptionAboutMeFour')}
+      </p>
+      <p class="tracking-wider font-semibold text-white-dark">
+        {t('someTechnologies')}
+      </p>
+      <ul class="grid grid-cols-2 gap-1 mt-12">
+        {
+          technologies.map((tech) => (
+            <li class="flex ease-in duration-200 hover:font-bold font-thin items-center text-white-dark before:text-neon-green before:content-['▹'] before:text-[8px] before:mx-3">
+              <a href={tech.url} target="_blank">
+                {tech.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
 </Layout>

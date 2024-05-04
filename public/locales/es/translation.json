@@ -1,9 +1,21 @@
 {
   "about": "Acerca de mí",
-  "email": "mauriciogallegoavi@gmail.com",
+  "aboutMyself": "Soy un desarrollador de software especializado en crear experiencias digitales excepcionales. Actualmente, estoy centrado en la creación de productos en ",
   "contact": "Contacto",
   "content": "Perfil de Mauricio",
+  "descriptionAboutMe": "Soy desarrollador Full Stack con más de 5 años de experiencia construyendo aplicaciones web y móviles.",
+  "descriptionAboutMeFour": "Me encanta seguir aprendiendo y estar al día en las últimas tecnologías.",
+  "descriptionAboutMeThree": "Orientado al detalle con conocimientos de UX/UI, centrado en la entrega de productos útiles y significativos.",
+  "descriptionAboutMeTwo": "Especialista en Javascript y React con fuerte experiencia en Back-End, interesado en trabajar en proyectos desafiantes y mejorar mis habilidades profesionales.",
+  "descriptionContact": "Aunque actualmente no estoy buscando nuevas oportunidades, siempre estoy abierto a escucharte. Ponte en contacto conmigo, ¡haré todo lo posible por responderte!",
+  "email": "mauriciogallegoavi@gmail.com",
   "experience": "Experiencia",
+  "getInTouch": "Contactame",
+  "greetings": "Hola, mi nombre es",
+  "mainInfo": "y construyo cosas para la web.",
   "resume": "Currículum",
+  "sayHello": "Saludáme",
+  "someTechnologies": "algunas tecnologías con las que estoy familiarizado:",
+  "whatIsNext": "Que sigue?",
   "work": "Trabajo"
 }

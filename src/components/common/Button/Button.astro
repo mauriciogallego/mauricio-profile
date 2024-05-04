@@ -1,0 +1,22 @@
+---
+import clsx from 'clsx';
+const { title, className } = Astro.props;
+
+const clsxButton = clsx({
+  'ease-in duration-150 text-sm text-neon-green tracking-wider border border-solid border-neon-green rounded': true,
+  'transition-effect': true,
+  [className]: true,
+});
+---
+
+<button class={clsxButton}>
+  {title}
+</button>
+
+<style>
+  .transition-effect:hover {
+    outline: none;
+    box-shadow: 3px 3px 0 0 #64ffda;
+    transform: translate(-4px, -4px);
+  }
+</style>

@@ -5,6 +5,7 @@ interface Props {
 
 import i18next, { t } from 'i18next';
 import NavBar from '../components/NavBar/NavBar.astro';
+import './src/styles/global.css';
 const { title } = Astro.props;
 ---
 
@@ -18,11 +19,11 @@ const { title } = Astro.props;
     <meta name="profileOfMauricio" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <main class="bg-neutro h-screen px-8 py-10">
-      <NavBar>
+  <body id="scroll" class="bg-neutro">
+    <NavBar>
+      <main class="px-8 w-full h-full">
         <slot />
-      </NavBar>
-    </main>
+      </main>
+    </NavBar>
   </body>
 </html>

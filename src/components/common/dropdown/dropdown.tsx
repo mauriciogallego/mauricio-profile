@@ -24,7 +24,7 @@ export default function Dropdown({
   return (
     <Menu as="div" className="relative inline-block text-right">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold tracking-widest text-white hover:text-neon-green ring-1 ring-inset ring-white hover:ring-neon-green">
+        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold tracking-widest text-white-light hover:text-neon-green ring-1 ring-inset ring-white hover:ring-neon-green">
           {value}
           <ChevronDownIcon className="-mr-1 h-5 w-5" aria-hidden="true" />
         </Menu.Button>

@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "i18": "npx astro-i18next generate",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
@@ -19,6 +20,7 @@
     "@types/react-dom": "^18.2.25",
     "astro": "^4.6.3",
     "astro-i18next": "^1.0.0-beta.21",
+    "clsx": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.3",
