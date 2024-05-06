@@ -1,8 +1,13 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
+import Title from "@/components/Title/Title.astro";
 
 changeLanguage("en");
 ---
 
-<Layout title="Experience"> Experience </Layout>
+<Layout title="Experience">
+  <div class="flex flex-col justify-center items-center w-full h-full">
+    <Title header="WhereIWork" />
+  </div>
+</Layout>

@@ -1,8 +1,17 @@
 ---
-import { changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
+import { changeLanguage } from 'i18next';
+import Layout from '@/layouts/Layout.astro';
+import Title from '@/components/Title/Title.astro';
+import Tab from '@/components/tab/tab';
 
-changeLanguage("es");
+changeLanguage('es');
 ---
 
-<Layout title="Experience"> Experience </Layout>
+<Layout title="Experience">
+  <div class="mt-[100px] w-full h-full">
+    <div>
+      <Title header="WhereIWork" />
+      <Tab client:visible />
+    </div>
+  </div>
+</Layout>

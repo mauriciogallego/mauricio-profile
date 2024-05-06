@@ -1,8 +1,26 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import Layout from "../../layouts/Layout.astro";
+import Button from "@/components/common/Button/Button.astro";
 
 changeLanguage("en");
 ---
 
-<Layout title="Contact"> Contact </Layout>
+<Layout title="Contact">
+  <div class="flex flex-col justify-center items-center w-full h-full">
+    <div class="space-y-4 flex flex-col justify-center items-center">
+      <p class="text-sm text-neon-green tracking-widest font-thin">
+        {t('whatIsNext')}
+      </p>
+      <h1 class="text-white font-bold text-6xl tracking-wider">
+        {t('getInTouch')}
+      </h1>
+      <p
+        class="leading-6 text-white-dark w-2/4 text-center font-thin tracking-wider"
+      >
+        {t('descriptionContact')}
+      </p>
+    </div>
+    <Button className="my-14 px-8 py-4" title={t('sayHello')} />
+  </div>
+</Layout>

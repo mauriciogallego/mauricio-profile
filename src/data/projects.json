@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Basapp",
+    "img": "/src/assets/img/basapp.png",
+    "description": "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
+    "technologies": [
+      "Next.js",
+      "Nest.js",
+      "Terraform",
+      "Cypress.io",
+      "Firebase"
+    ]
+  },
+  {
+    "title": "Renová tu vestidor",
+    "img": "/src/assets/img/basapp.png",
+    "description": "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
+    "technologies": ["React Native", "Expo", "Detox", "React-Query"]
+  },
+  {
+    "title": "Butaca TV",
+    "img": "/src/assets/img/basapp.png",
+    "description": "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
+    "technologies": ["Next.js", "Videos.js", "React-Query", "Cypress.io"]
+  },
+  {
+    "title": "Banco Galicia",
+    "img": "/src/assets/img/basapp.png",
+    "description": "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
+    "technologies": ["React.js", "Axios", "Chart.js"]
+  }
+]

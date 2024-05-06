@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+
+const { title, description, technologies, image } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/img/*.{jpeg,jpg,png,gif}',
+);
+
+if (!images[image])
+  throw new Error(
+    `"${image}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`,
+  );
+---
+
+<div class="relative mt-10 min-h-[350px]">
+  <div class="absolute right-0 bg-blue-100 min-h-[350px] w-3/5">
+    <Image
+      src={images[image]()}
+      alt={`img-${title}`}
+      width={640.8}
+      height={350}
+    />
+  </div>
+  <div class="absolute top-12 left-0 min-h-[250px] w-1/2 space-y-4">
+    <h3 class="text-white tracking-widest font-bold text-2xl">{title}</h3>
+    <div class="shadow-lg rounded bg-navy-light py-4 px-7">
+      <p class="text-white font-thin tracking-wider text-sm">{description}</p>
+    </div>
+    <div class="flex space-x-5">
+      {
+        technologies.map((tech: string) => (
+          <li class="flex tracking-wider text-sm items-center text-white-dark">
+            {tech}
+          </li>
+        ))
+      }
+    </div>
+  </div>
+</div>
