@@ -1,12 +1,7 @@
 ---
-interface Props {
-  title: string;
-}
-
 import i18next, { t } from 'i18next';
 import NavBar from '../components/NavBar/NavBar.astro';
 import './src/styles/global.css';
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,7 +12,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="profileOfMauricio" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Mauricio Gallego</title>
   </head>
   <body id="scroll" class="bg-neutro">
     <NavBar>

@@ -14,14 +14,16 @@ if (!images[image])
 ---
 
 <div class="relative mt-10">
-  <div class="bg-red-300 min-h-[350px] w-3/5">
+  <a class="block">
     <Image
+      class="object-cover rounded transition-opacity duration-300 opacity-75 hover:opacity-100 mix-blend-plus-multiply hover:mix-blend-normal before:mix-blend-screen"
       src={images[image]()}
       alt={`img-${title}`}
       width={640.8}
-      height={350}
+      densities={[1.5, 2]}
+      height={360}
     />
-  </div>
+  </a>
   <div class="absolute top-12 right-0 min-h-[250px] w-1/2 space-y-4">
     <h3 class="text-white tracking-widest font-bold text-2xl text-right">
       {title}
@@ -31,7 +33,7 @@ if (!images[image])
         {description}
       </p>
     </div>
-    <div class="flex flex-row-reverse space-x-5">
+    <div class="flex flex-row-reverse space-x-reverse space-x-5 w-full">
       {
         technologies.map((tech: string) => (
           <li class="flex tracking-wider text-sm items-center text-white-dark">

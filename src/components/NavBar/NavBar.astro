@@ -8,7 +8,7 @@ import SelectorLanguage from '../selectorLanguage/selectorLanguage';
 import Button from '../common/Button/Button.astro';
 ---
 
-<nav class="fixed flex justify-between w-full px-24 py-6 bg-neutro">
+<nav class="fixed flex justify-between w-full px-24 py-6 bg-neutro z-50">
   <SelectorLanguage value={i18next.language} client:visible />
 
   <div class="flex items-center">
