@@ -12,6 +12,9 @@ export default {
         'white-light': '#ccd6f6',
         'white-dark': '#a8b2d1',
       },
+      boxShadow: {
+        large: '0px 0px 65px rgba(0, 0, 0, 0.22)', // dark shadow
+      },
     },
   },
   plugins: [],

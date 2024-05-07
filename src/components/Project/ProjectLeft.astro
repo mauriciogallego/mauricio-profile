@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { t } from 'i18next';
 
 const { title, description, technologies, image } = Astro.props;
 
@@ -16,7 +17,7 @@ if (!images[image])
 <div class="relative mt-10">
   <a class="block">
     <Image
-      class="object-cover rounded transition-opacity duration-300 opacity-75 hover:opacity-100 mix-blend-plus-multiply hover:mix-blend-normal before:mix-blend-screen"
+      class="border-[0.2px] border-white object-cover drop-shadow-2xl rounded transition-opacity duration-300 opacity-75 hover:opacity-100 mix-blend-plus-multiply hover:mix-blend-normal before:mix-blend-screen"
       src={images[image]()}
       alt={`img-${title}`}
       width={640.8}
@@ -29,8 +30,10 @@ if (!images[image])
       {title}
     </h3>
     <div class="shadow-lg rounded bg-navy-light py-4 px-7">
-      <p class="text-white text-right font-thin tracking-wider text-sm">
-        {description}
+      <p
+        class="text-white text-right font-thin tracking-wider text-sm drop-shadow-2xl"
+      >
+        {t(description)}
       </p>
     </div>
     <div class="flex flex-row-reverse space-x-reverse space-x-5 w-full">

@@ -38,5 +38,10 @@
   "syagarageDescriptionTwo": "Encargado de tareas móviles usando React Native como framework principal y cubriendo las pruebas con Detox.js.",
   "whatIsNext": "Que sigue?",
   "WhereIWork": "Donde he trabajado",
-  "work": "Trabajo"
+  "work": "Trabajo",
+  "profileWorkDescription": "aplicación diseñada para mostrar la cartera de las aplicaciones que he realizado a lo largo del tiempo.",
+  "basappWorkDescription": "Aplicación de seguridad en webApp y móvil. diseñada para barrios y municipios para alertar de robos y peligros.",
+  "vestidorWorkDescription": "Una aplicación diseñada para facilitar el proceso de renovación del guardarropa. Ofrece una plataforma donde los usuarios pueden comprar, vender o intercambiar ropa y accesorios de moda de manera sencilla",
+  "butacaWorkDescription": "Butaca TV es una aplicación de entretenimiento con una amplia selección de películas y series para todos los gustos. Con una interfaz intuitiva, te permite descubrir y disfrutar de contenido audiovisual de manera fácil y emocionante",
+  "galiciaWorkDescription": "La aplicación de Banco Galicia es una herramienta integral para el manejo de las finanzas en dispositivos móviles. Permite realizar operaciones bancarias como transferencias, pagos de facturas, consultas de saldo, y ofrece funcionalidades como compras en USD, gestión de tarjetas de crédito/débito y acceso a promociones exclusivas para clientes."
 }
