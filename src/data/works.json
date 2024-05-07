@@ -4,11 +4,12 @@
     "position": "Full-Stack Web Developer",
     "dates": "06/2021 - present",
     "items": [
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut."
+      "syagarageDescription",
+      "syagarageDescriptionTwo",
+      "syagarageDescriptionThree",
+      "syagarageDescriptionFour",
+      "syagarageDescriptionFive",
+      "syagarageDescriptionSix"
     ]
   },
   {
@@ -16,11 +17,10 @@
     "position": "Front-End Web Developer",
     "dates": "03/2021 - 06/2021",
     "items": [
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut."
+      "publicisDescription",
+      "publicisDescriptionTwo",
+      "publicisDescriptionThree",
+      "publicisDescriptionFour"
     ]
   },
   {
@@ -28,11 +28,11 @@
     "position": "Full-Stack Web Developer",
     "dates": "09/2019 - 03/2021",
     "items": [
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut."
+      "accentureDescription",
+      "accentureDescriptionTwo",
+      "accentureDescriptionThree",
+      "accentureDescriptionFour",
+      "accentureDescriptionFive"
     ]
   },
   {
@@ -40,11 +40,10 @@
     "position": "System Support",
     "dates": "09/2017 - 09/2019",
     "items": [
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut.",
-      "Cumque ut voluptas sequi ipsa et qui. Molestias expedita repellat voluptatibus est optio. Ea ut ea aut."
+      "calipsoDescription",
+      "calipsoDescriptionOne",
+      "calipsoDescriptionTwo",
+      "calipsoDescriptionThree"
     ]
   }
 ]
