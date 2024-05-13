@@ -1,13 +1,13 @@
 ---
 import { changeLanguage, t } from "i18next";
-import Layout from "../../layouts/Layout.astro";
-import Title from "../../components/Title/Title.astro";
-import { technologies } from "../../constants";
+import Layout from "@/layouts/Layout.astro";
+import Title from "@/components/Title/Title.astro";
+import { technologies } from "@/constants";
 
 changeLanguage("en");
 ---
 
-<Layout title="About">
+<Layout>
   <div class="py-60">
     <p class="tracking-widest text-neon-green">{t('greetings')}</p>
     <h1 class="tracking-widest text-white text-7xl font-bold mt-3">

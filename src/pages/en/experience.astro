@@ -1,13 +1,17 @@
 ---
 import { changeLanguage } from "i18next";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
 import Title from "@/components/Title/Title.astro";
+import Tab from "@/components/tab/tab";
 
 changeLanguage("en");
 ---
 
-<Layout title="Experience">
-  <div class="flex flex-col justify-center items-center w-full h-full">
+<Layout>
+  <div class="pt-[100px]">
     <Title header="WhereIWork" />
+    <div class="w-full py-6 flex items-center justify-center">
+      <Tab client:visible />
+    </div>
   </div>
 </Layout>

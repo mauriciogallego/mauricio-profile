@@ -1,0 +1,23 @@
+---
+const { title } = Astro.props;
+---
+
+<script>
+  // Get the text field
+  var copyText = document.getElementById('email-button');
+
+  copyText?.addEventListener('click', (e) => {
+    if (copyText) {
+      // Copy the text inside the text field
+      console.log(copyText.innerHTML);
+      navigator.clipboard.writeText(copyText.innerHTML);
+    }
+  });
+</script>
+
+<button
+  id="email-button"
+  class="text-sm hover:text-base transform ease-out duration-300 hover:text-neon-green text-white [writing-mode:vertical-lr] [letter-spacing:0.2rem]"
+>
+  {title}
+</button>

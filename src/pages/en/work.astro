@@ -1,8 +1,42 @@
 ---
 import { changeLanguage } from "i18next";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
+import Title from "@/components/Title/Title.astro";
+import ProjectLeft from "@/components/Project/ProjectLeft.astro";
+import ProjectRight from "@/components/Project/ProjectRight.astro";
+import projects from "@/data/projects.json";
 
 changeLanguage("en");
 ---
 
-<Layout title="About"> about </Layout>
+<Layout>
+  <div class="py-[100px] w-full h-full">
+    <div>
+      <Title header="somethingBuilt" />
+      <div class="space-y-12">
+        {
+          projects.map((item, index) => {
+            if (index % 2 == 0) {
+              return (
+                <ProjectLeft
+                  title={item.title}
+                  image={item.img}
+                  description={item.description}
+                  technologies={item.technologies}
+                />
+              );
+            }
+            return (
+              <ProjectRight
+                title={item.title}
+                image={item.img}
+                description={item.description}
+                technologies={item.technologies}
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -5,10 +5,40 @@ import { localizePath } from 'astro-i18next';
 import { navigation } from './constants';
 import { padStart } from '../../utils/number';
 import SelectorLanguage from '../selectorLanguage/selectorLanguage';
-import Button from '../common/Button/Button.astro';
+import Clibboard from '../Clibboard/Clibboard.astro';
+
+const classNameNav =
+  'fixed flex justify-between w-full px-24 py-6 bg-neutro z-50 transition-transform';
 ---
 
-<nav class="fixed flex justify-between w-full px-24 py-6 bg-neutro z-50">
+<script is:inline define:vars={{ classNameNav }}>
+  let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollDown = '-translate-y-full';
+  const scrollUp = 'translate-y-0 shadow-2xl';
+
+  window.onscroll = function () {
+    window.addEventListener(
+      'scroll',
+      function handleScroll() {
+        const scrollTopPosition = window.scrollY;
+
+        if (scrollTopPosition > lastScrollTop) {
+          document.getElementById('menu-bar').className =
+            `${classNameNav} ${scrollDown}`;
+        } else if (scrollTopPosition < lastScrollTop) {
+          document.getElementById('menu-bar').className =
+            `${classNameNav} ${scrollUp}`;
+        } else if (window.scrollY == 0) {
+          document.getElementById('menu-bar').className = `${classNameNav}`;
+        }
+        lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+      },
+      false,
+    );
+  };
+</script>
+
+<nav id="menu-bar" class={classNameNav}>
   <SelectorLanguage value={i18next.language} client:visible />
 
   <div class="flex items-center">
@@ -24,7 +54,13 @@ import Button from '../common/Button/Button.astro';
         </a>
       ))
     }
-    <Button className="ml-5 px-4 py-3" title={t('resume')} />
+    <a
+      class="ml-5 px-4 py-3 ease-in duration-150 text-sm text-neon-green tracking-wider border border-solid border-neon-green rounded transition-effect"
+      href="pdf/Mauricio_Enrique_Gallego_Avila_CV.pdf"
+      target="_blank"
+    >
+      {t('resume')}
+    </a>
   </div>
 </nav>
 
@@ -33,11 +69,7 @@ import Button from '../common/Button/Button.astro';
 </div>
 
 <div class="fixed flex items-end pb-10 bottom-0 right-0 w-28">
-  <p
-    class="text-sm text-white [writing-mode:vertical-lr] [letter-spacing:0.2rem]"
-  >
-    {t('email')}
-  </p>
+  <Clibboard title={t('email')} />
 </div>
 
 <div class="min-h-screen flex">
