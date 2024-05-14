@@ -1,12 +1,12 @@
 ---
-import i18next, { changeLanguage, t } from 'i18next';
-import Layout from '../layouts/Layout.astro';
+import i18next, { changeLanguage, t } from "i18next";
+import Layout from "../layouts/Layout.astro";
 
-if (i18next.language === 'en') {
-  return Astro.redirect('/en/404');
+changeLanguage("es");
+
+if (i18next.language === "en") {
+    return Astro.redirect("/en/404");
 }
-
-changeLanguage('es');
 ---
 
 <Layout>
