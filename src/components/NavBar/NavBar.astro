@@ -6,9 +6,11 @@ import { navigation } from './constants';
 import { padStart } from '../../utils/number';
 import SelectorLanguage from '../selectorLanguage/selectorLanguage';
 import Clibboard from '../Clibboard/Clibboard.astro';
+import Burguer from '@/svg/burguer.astro';
+import Close from '@/svg/close.astro';
 
 const classNameNav =
-  'fixed flex justify-between w-full px-2 md:px-24 py-6 bg-neutro z-50 transition-transform';
+  'fixed flex justify-between w-full px-2 lg:px-24 py-6 bg-neutro z-50 transition-transform';
 ---
 
 <script is:inline define:vars={{ classNameNav }}>
@@ -38,14 +40,41 @@ const classNameNav =
   };
 </script>
 
+<script>
+  const classNameMenu =
+    'absolute bg-neutro mr-2 h-[100vh] md:h-fit space-y-5 md:space-y-0 transition-transform md:relative flex flex-col md:flex-row md:items-center items-end';
+
+  const buttons = document.querySelectorAll('[data-burger-menu]');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const menu = document.getElementById('menu');
+      if (menu) {
+        const hide = menu?.getAttribute('aria-checked') === 'false';
+        console.log({ hide });
+
+        menu.className = `${classNameMenu} ${hide ? 'right-0' : '-right-full'}`;
+
+        menu?.setAttribute('aria-checked', hide.toString());
+      }
+    });
+  });
+</script>
+
 <nav id="menu-bar" class={classNameNav}>
   <SelectorLanguage value={i18next.language} client:visible />
-
-  <div class="flex items-center">
+  <button data-burger-menu class="md:hidden">
+    <Burguer width="35" class="fill-white" />
+  </button>
+  <div
+    id="menu"
+    aria-checked="false"
+    class="absolute bg-neutro mr-2 h-[100vh] md:h-fit space-y-6 md:space-y-0 -right-full md:right-0 md:relative flex flex-col md:flex-row md:items-center items-end"
+  >
     {
       navigation.map(({ name, href }, index) => (
         <a href={localizePath(href)}>
-          <div class="flex text-xs text-neon-green tracking-widest px-4 py-2">
+          <div class="flex text-xs text-neon-green tracking-widest md:px-4 py-4 md:py-2">
             {padStart(index + 1)}.
             <p class="text-xs text-white hover:text-neon-green pl-1">
               {t(name)}
@@ -61,19 +90,23 @@ const classNameNav =
     >
       {t('resume')}
     </a>
+
+    <button data-burger-menu class="sm:hidden text-white">
+      <Close width="35" class="fill-white" />
+    </button>
   </div>
 </nav>
 
-<div class="hidden md:fixed md:flex items-end bottom-0 left-[95px]">
+<div class="hidden md:fixed md:flex items-end bottom-0 left-[6.5%]">
   <div class="w-[1px] h-[250px] bg-neon-green opacity-30"></div>
 </div>
 
-<div class="hidden md:fixed md:flex items-end pb-10 bottom-0 right-0 w-28">
+<div class="hidden md:fixed md:flex items-end pb-10 bottom-0 right-0 w-1/12">
   <Clibboard title={t('email')} />
 </div>
 
 <div class="min-h-screen flex">
-  <div class="w-full md:mx-[150px]">
+  <div class="w-full sm:mx-[10%]">
     <slot />
   </div>
 </div>

@@ -6,7 +6,7 @@
     "i18": "npx astro-i18next generate",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "yarn i18n && astro check && astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
