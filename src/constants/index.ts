@@ -10,3 +10,8 @@ export const technologies = [
   { name: 'Typescript', url: 'https://www.typescriptlang.org/' },
   { name: 'Sentry', url: 'https://docs.sentry.io/' },
 ];
+
+export const flags = {
+  en: '🇬🇧',
+  es: '🇨🇴',
+};

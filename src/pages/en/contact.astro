@@ -1,7 +1,6 @@
 ---
 import { changeLanguage, t } from "i18next";
 import Layout from "../../layouts/Layout.astro";
-import Button from "@/components/common/Button/Button.astro";
 
 changeLanguage("en");
 ---
@@ -23,6 +22,11 @@ changeLanguage("en");
         {t('descriptionContact')}
       </p>
     </div>
-    <Button className="my-14 px-8 py-4" title={t('sayHello')} />
+    <a
+      class="transition-effect my-14 px-8 py-4 ease-in duration-150 text-sm text-neon-green tracking-wider border border-solid border-neon-green rounded"
+      href={`mailto:mauriciogallegoavi@gmail.com`}
+    >
+      {t('sayHello')}
+    </a>
   </div>
 </Layout>

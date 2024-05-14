@@ -64,12 +64,12 @@ const classNameNav =
 <nav id="menu-bar" class={classNameNav}>
   <SelectorLanguage value={i18next.language} client:visible />
   <button data-burger-menu class="md:hidden">
-    <Burguer width="35" class="fill-white" />
+    <Burguer width="35" class="fill-white hover:fill-neon-green" />
   </button>
   <div
     id="menu"
     aria-checked="false"
-    class="absolute bg-neutro mr-2 h-[100vh] md:h-fit space-y-6 md:space-y-0 -right-full md:right-0 md:relative flex flex-col md:flex-row md:items-center items-end"
+    class="absolute bg-neutro mr-2 h-[100vh] md:h-fit space-y-6 md:space-y-0 -right-full md:right-0 md:relative flex flex-col md:flex-row md:items-center"
   >
     {
       navigation.map(({ name, href }, index) => (
@@ -91,8 +91,8 @@ const classNameNav =
       {t('resume')}
     </a>
 
-    <button data-burger-menu class="sm:hidden text-white">
-      <Close width="35" class="fill-white" />
+    <button data-burger-menu class="md:hidden text-white">
+      <Close width="32" class="fill-white hover:fill-neon-green" />
     </button>
   </div>
 </nav>

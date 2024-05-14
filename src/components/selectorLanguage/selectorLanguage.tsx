@@ -1,6 +1,6 @@
 import Dropdown from '../common/dropdown/dropdown';
 
-export default function SelectorLanguage({ value }: { value: string }) {
+export default function SelectorLanguage({ value }: { value: 'es' | 'en' }) {
   return (
     <Dropdown
       onclick={(language: string) => {
@@ -10,8 +10,8 @@ export default function SelectorLanguage({ value }: { value: string }) {
       }}
       value={value}
       options={[
-        { label: 'en', value: '/en' },
-        { label: 'es', value: '' },
+        { label: '🇬🇧', value: '/en' },
+        { label: '🇨🇴', value: '' },
       ]}
     />
   );
