@@ -6,7 +6,7 @@ const { title } = Astro.props;
   // Get the text field
   var copyText = document.getElementById('email-button');
 
-  copyText?.addEventListener('click', (e) => {
+  copyText?.addEventListener('click', () => {
     if (copyText) {
       // Copy the text inside the text field
       console.log(copyText.innerHTML);
