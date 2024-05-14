@@ -30,7 +30,7 @@
   "sayHello": "Say hello",
   "someTechnologies": "some technologies with which I am familiar with:",
   "somethingBuilt": "Some Things I Have Built",
-  "syagarageDescription": "Responsable de las tareas Front-end manejando Next.js para construir la app.",
+  "syagarageDescription": "Responsible for Front-end tasks handling Next.js to build the app.",
   "syagarageDescriptionFive": "Responsible for DevOps tasks implementing Terraform to build all environments.",
   "syagarageDescriptionFour": "Responsible for back-end tasks implementing Nest.js as a main framework and Prisma.io as ORM.",
   "syagarageDescriptionSix": "Handling of GCP to build, deploy and test the back-end side",
