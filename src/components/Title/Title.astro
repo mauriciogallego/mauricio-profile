@@ -4,9 +4,12 @@ import { t } from 'i18next';
 const { header } = Astro.props;
 ---
 
-<div class="flex items-center space-x-6">
-  <p class="text-white font-bold text-3xl">
+<div class="flex grid-cols-2 items-center space-x-6">
+  <p class="text-white flex-none font-bold text-xl md:text-3xl">
     {t(header)}
   </p>
-  <div class="h-[1px] w-[350px] bg-neon-green opacity-30"></div>
+  <div
+    class="h-[1px] min-w-[150px] w-full max-w-[350px] bg-neon-green opacity-30"
+  >
+  </div>
 </div>

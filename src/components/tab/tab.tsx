@@ -11,15 +11,15 @@ export default () => {
 
   const setClassName = (index: number) =>
     clsx({
-      'px-9 py-5 text-slate tracking-widest text-sm text-left border-l-2 border-neutro-dark font-thin':
+      'px-6 py-2 md:px-9 md:py-5 text-slate tracking-widest text-xs text-left border-b-2 md:border-l-2 md:border-b-0 border-neutro-dark font-thin':
         true,
       'hover:bg-navy-light': index !== tab,
       '!text-neon-green ease-in duration-150 !border-neon-green': index === tab,
     });
 
   return (
-    <div className="flex mt-10 space-x-2 w-11/12">
-      <div className="flex flex-col">
+    <div className="flex flex-col md:flex-row mt-10 space-x-2 w-full md:w-11/12">
+      <div className="flex md:flex-col">
         <Each
           of={works}
           render={(item, index) => (
@@ -32,7 +32,7 @@ export default () => {
           )}
         />
       </div>
-      <div className="w-3/4 min-h-[400px] space-y-8">
+      <div className="md:w-3/4 mt-6 md:mt-0 md:min-h-[400px] space-y-8">
         <div className="space-y">
           <h3 className="text-xl font-bold text-white-light tracking-wider">
             {works[tab].position}
@@ -41,7 +41,7 @@ export default () => {
             {works[tab].dates}
           </p>
         </div>
-        <div className="w-4/5 space-y-2">
+        <div className="md:w-4/5 space-y-2">
           <Each
             of={works[tab].items}
             render={(item) => (

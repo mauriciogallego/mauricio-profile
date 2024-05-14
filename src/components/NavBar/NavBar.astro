@@ -8,7 +8,7 @@ import SelectorLanguage from '../selectorLanguage/selectorLanguage';
 import Clibboard from '../Clibboard/Clibboard.astro';
 
 const classNameNav =
-  'fixed flex justify-between w-full px-24 py-6 bg-neutro z-50 transition-transform';
+  'fixed flex justify-between w-full px-2 md:px-24 py-6 bg-neutro z-50 transition-transform';
 ---
 
 <script is:inline define:vars={{ classNameNav }}>
@@ -64,16 +64,16 @@ const classNameNav =
   </div>
 </nav>
 
-<div class="fixed flex items-end bottom-0 left-[95px]">
+<div class="hidden md:fixed md:flex items-end bottom-0 left-[95px]">
   <div class="w-[1px] h-[250px] bg-neon-green opacity-30"></div>
 </div>
 
-<div class="fixed flex items-end pb-10 bottom-0 right-0 w-28">
+<div class="hidden md:fixed md:flex items-end pb-10 bottom-0 right-0 w-28">
   <Clibboard title={t('email')} />
 </div>
 
 <div class="min-h-screen flex">
-  <div class="w-full mx-[150px]">
+  <div class="w-full md:mx-[150px]">
     <slot />
   </div>
 </div>
