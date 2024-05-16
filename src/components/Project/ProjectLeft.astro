@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import { t } from 'i18next';
 
-const { title, description, technologies, image } = Astro.props;
+const { title, description, technologies, image, working } = Astro.props;
 
 // search for all existing images on the path
 const images = import.meta.glob<{ default: ImageMetadata }>(
@@ -27,9 +27,18 @@ if (!images[image])
   <div
     class="mt-4 lg:mt-0 lg:absolute top-12 right-0 min-h-[250px] lg:w-1/2 space-y-4"
   >
-    <h3 class="text-white tracking-widest font-bold text-2xl text-right">
-      {title}
-    </h3>
+    <div>
+      {
+        working ? (
+          <p class="text-right text-sm font-thin italic text-neon-green tracking-widest">
+            {t('workingOn')}
+          </p>
+        ) : null
+      }
+      <h3 class="text-white tracking-widest font-bold text-2xl text-right">
+        {title}
+      </h3>
+    </div>
     <div class="shadow-lg rounded bg-navy-light py-4 px-7">
       <p
         class="text-white text-right font-thin tracking-wider text-sm drop-shadow-2xl"

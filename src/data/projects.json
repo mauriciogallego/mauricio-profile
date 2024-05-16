@@ -1,9 +1,17 @@
 [
   {
+    "title": "TuGarantia",
+    "img": "/src/assets/img/tugarantia.png",
+    "description": "tugarantiaWorkDescription",
+    "technologies": ["Next.js", "Nest.js", "Terraform", "Cypress.io"],
+    "workingOn": true
+  },
+  {
     "title": "Profile",
     "img": "/src/assets/img/profile.png",
     "description": "profileWorkDescription",
-    "technologies": ["React.js", "Astro.build", "Tailwind"]
+    "technologies": ["React.js", "Astro.build", "Tailwind"],
+    "workingOn": false
   },
   {
     "title": "Basapp",
@@ -15,24 +23,28 @@
       "Terraform",
       "Cypress.io",
       "Firebase"
-    ]
+    ],
+    "workingOn": false
   },
   {
     "title": "Renová tu vestidor",
     "img": "/src/assets/img/renova-vestidor.png",
     "description": "vestidorWorkDescription",
-    "technologies": ["React Native", "Expo", "Detox", "React-Query"]
+    "technologies": ["React Native", "Expo", "Detox", "React-Query"],
+    "workingOn": false
   },
   {
     "title": "Butaca TV",
     "img": "/src/assets/img/butaca-tv.png",
     "description": "butacaWorkDescription",
-    "technologies": ["Next.js", "Videos.js", "React-Query", "Cypress.io"]
+    "technologies": ["Next.js", "Videos.js", "React-Query", "Cypress.io"],
+    "workingOn": false
   },
   {
     "title": "Banco Galicia",
     "img": "/src/assets/img/galicia.png",
     "description": "galiciaWorkDescription",
-    "technologies": ["React.js", "Axios", "Chart.js"]
+    "technologies": ["React.js", "Axios", "Chart.js"],
+    "workingOn": false
   }
 ]

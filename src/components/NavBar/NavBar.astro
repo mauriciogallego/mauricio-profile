@@ -51,7 +51,6 @@ const classNameNav =
       const menu = document.getElementById('menu');
       if (menu) {
         const hide = menu?.getAttribute('aria-checked') === 'false';
-        console.log({ hide });
 
         menu.className = `${classNameMenu} ${hide ? 'right-0' : '-right-full'}`;
 

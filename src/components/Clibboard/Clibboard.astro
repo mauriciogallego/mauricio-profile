@@ -9,7 +9,6 @@ const { title } = Astro.props;
   copyText?.addEventListener('click', () => {
     if (copyText) {
       // Copy the text inside the text field
-      console.log(copyText.innerHTML);
       navigator.clipboard.writeText(copyText.innerHTML);
     }
   });
