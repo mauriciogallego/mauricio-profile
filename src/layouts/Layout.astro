@@ -2,6 +2,7 @@
 import i18next, { t } from 'i18next';
 import NavBar from '../components/NavBar/NavBar.astro';
 import '../styles/global.css';
+const PUBLIC_GTM_ID = import.meta.env.PUBLIC_GTM_ID;
 ---
 
 <!doctype html>
@@ -14,7 +15,7 @@ import '../styles/global.css';
     <meta name="profileOfMauricio" content={Astro.generator} />
     <title>Mauricio Gallego</title>
     <!-- Google Tag Manager -->
-    <script is:inline>
+    <script is:inline define:vars={{ PUBLIC_GTM_ID }}>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
@@ -24,7 +25,7 @@ import '../styles/global.css';
         j.async = true;
         j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-NSVLLHF5');
+      })(window, document, 'script', 'dataLayer', PUBLIC_GTM_ID);
     </script>
     <!-- End Google Tag Manager -->
   </head>
@@ -37,7 +38,7 @@ import '../styles/global.css';
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-NSVLLHF5"
+        src={`https://www.googletagmanager.com/ns.html?id=${PUBLIC_GTM_ID}`}
         height="0"
         width="0"
         style="display:none;visibility:hidden"></iframe>
