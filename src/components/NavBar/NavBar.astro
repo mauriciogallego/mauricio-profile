@@ -7,42 +7,42 @@ import { padStart } from '../../utils/number';
 import SelectorLanguage from '../selectorLanguage/selectorLanguage';
 import Clibboard from '../Clibboard/Clibboard.astro';
 import Burguer from '@/svg/burguer.astro';
-import Close from '@/svg/close.astro';
-
-const classNameNav =
-  'fixed flex justify-between w-full px-2 lg:px-24 py-6 bg-neutro z-50 transition-transform';
 ---
 
-<script is:inline define:vars={{ classNameNav }}>
+<script is:inline>
+  const classNameNav =
+    'fixed flex justify-between w-full px-2 lg:px-24 py-6 bg-neutro z-50 transition-transform';
   let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
   const scrollDown = '-translate-y-full';
   const scrollUp = 'translate-y-0 shadow-2xl';
 
   window.onscroll = function () {
-    window.addEventListener(
-      'scroll',
-      function handleScroll() {
-        const scrollTopPosition = window.scrollY;
+    if (window.innerWidth >= '768') {
+      window.addEventListener(
+        'scroll',
+        function handleScroll() {
+          const scrollTopPosition = window.scrollY;
 
-        if (scrollTopPosition > lastScrollTop) {
-          document.getElementById('menu-bar').className =
-            `${classNameNav} ${scrollDown}`;
-        } else if (scrollTopPosition < lastScrollTop) {
-          document.getElementById('menu-bar').className =
-            `${classNameNav} ${scrollUp}`;
-        } else if (window.scrollY == 0) {
-          document.getElementById('menu-bar').className = `${classNameNav}`;
-        }
-        lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
-      },
-      false,
-    );
+          if (scrollTopPosition > lastScrollTop) {
+            document.getElementById('menu-bar').className =
+              `${classNameNav} ${scrollDown}`;
+          } else if (scrollTopPosition < lastScrollTop) {
+            document.getElementById('menu-bar').className =
+              `${classNameNav} ${scrollUp}`;
+          } else if (window.scrollY == 0) {
+            document.getElementById('menu-bar').className = `${classNameNav}`;
+          }
+          lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+        },
+        false,
+      );
+    }
   };
 </script>
 
 <script>
   const classNameMenu =
-    'absolute bg-neutro mr-2 h-[100vh] md:h-fit space-y-5 md:space-y-0 transition-transform md:relative flex flex-col md:flex-row md:items-center items-end';
+    'absolute right-0 shadow-left bg-neutro pr-2 mt-[66px] md:mt-0 h-[100vh] md:h-fit space-y-5 md:space-y-0 transition-transform md:relative flex flex-col md:flex-row md:items-center items-end';
 
   const buttons = document.querySelectorAll('[data-burger-menu]');
 
@@ -52,7 +52,7 @@ const classNameNav =
       if (menu) {
         const hide = menu?.getAttribute('aria-checked') === 'false';
 
-        menu.className = `${classNameMenu} ${hide ? 'right-0' : '-right-full'}`;
+        menu.className = `${classNameMenu} ${hide ? 'translate-x-0' : 'translate-x-36'}`;
 
         menu?.setAttribute('aria-checked', hide.toString());
       }
@@ -60,15 +60,28 @@ const classNameNav =
   });
 </script>
 
-<nav id="menu-bar" class={classNameNav}>
-  <SelectorLanguage value={i18next.language} client:visible />
-  <button data-burger-menu class="md:hidden">
-    <Burguer width="35" class="fill-white hover:fill-neon-green" />
+<nav
+  id="menu-bar"
+  class="fixed shadow-lg md:shadow-none flex justify-between w-full px-2 lg:px-24 py-6 bg-neutro z-50 transition-transform"
+>
+  <SelectorLanguage value={i18next.language as 'es' | 'en'} client:visible />
+  <button
+    data-burger-menu
+    class="group relative inline-block underline duration-300"
+  >
+    <span
+      class="md:hidden absolute animate-fade animate-reverse animate-fill-forwards animate-delay-[2000ms] z-50 top-1 w-16 -right-3 -translate-x-14 px-2 py-1 bg-slate rounded-lg text-center text-white text-xs before:content-[''] before:absolute before:top-1/2 before:left-[97%] before:-translate-y-1/2 before:border-8 before:border-y-transparent before:border-r-transparent before:border-l-slate"
+      >Tap me</span
+    >
+    <Burguer
+      width="35"
+      class="md:hidden group fill-white hover:fill-neon-green animate-wiggle-more animate-thrice animate-fill-backwards"
+    />
   </button>
   <div
     id="menu"
     aria-checked="false"
-    class="absolute bg-neutro mr-2 h-[100vh] md:h-fit space-y-6 md:space-y-0 -right-full md:right-0 md:relative flex flex-col md:flex-row md:items-center"
+    class="absolute bg-neutro right-0 translate-x-36 md:translate-x-0 eft mr-2 h-[100vh] md:h-fit space-y-6 md:space-y-0 md:relative flex flex-col md:flex-row md:items-center"
   >
     {
       navigation.map(({ name, href }, index) => (
@@ -89,10 +102,6 @@ const classNameNav =
     >
       {t('resume')}
     </a>
-
-    <button data-burger-menu class="md:hidden text-white">
-      <Close width="32" class="fill-white hover:fill-neon-green" />
-    </button>
   </div>
 </nav>
 

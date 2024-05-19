@@ -1,10 +1,10 @@
 ---
-import { changeLanguage, t } from "i18next";
-import Layout from "@/layouts/Layout.astro";
-import Title from "@/components/Title/Title.astro";
-import { technologies } from "@/constants";
+import { changeLanguage, t } from 'i18next';
+import Layout from '@/layouts/Layout.astro';
+import Title from '@/components/Title/Title.astro';
+import { technologies } from '@/constants';
 
-changeLanguage("es");
+changeLanguage('es');
 ---
 
 <Layout>
@@ -30,7 +30,7 @@ changeLanguage("es");
   </div>
   <div class="mb-28">
     <Title header="about" />
-    <div class="md:w-2/3 md:mt-10 space-y-4">
+    <div class="md:w-2/3 mt-10 space-y-4">
       <p class="font-thin tracking-wider text-white-dark">
         {t('descriptionAboutMe')}
       </p>
