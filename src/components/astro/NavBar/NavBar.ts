@@ -1,5 +1,5 @@
 const classNameMenu =
-  'absolute z-50 right-0 shadow-left bg-neutro pr-2 mt-[66px] md:mt-0 h-[100vh] md:h-fit space-y-5 md:space-y-0 transition-transform md:relative flex flex-col md:flex-row md:items-center items-end';
+  'absolute z-50 md:translate-x-0 right-0 shadow-left bg-neutro pr-2 mt-[66px] md:mt-0 h-[100vh] md:h-fit space-y-5 md:space-y-0 transition-transform md:relative flex flex-col md:flex-row md:items-center items-end';
 
 const buttonAction = () => {
   const menu = document.getElementById('menu');
