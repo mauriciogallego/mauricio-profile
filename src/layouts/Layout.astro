@@ -2,6 +2,7 @@
 import i18next, { t } from 'i18next';
 import NavBar from '../components/NavBar/NavBar.astro';
 import '../styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
 const PUBLIC_GTM_ID = import.meta.env.PUBLIC_GTM_ID;
 ---
 
@@ -28,6 +29,7 @@ const PUBLIC_GTM_ID = import.meta.env.PUBLIC_GTM_ID;
       })(window, document, 'script', 'dataLayer', PUBLIC_GTM_ID);
     </script>
     <!-- End Google Tag Manager -->
+    <ViewTransitions />
   </head>
   <body id="scroll" class="bg-neutro">
     <NavBar>

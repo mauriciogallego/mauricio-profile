@@ -40,28 +40,9 @@ import Burguer from '@/svg/burguer.astro';
   };
 </script>
 
-<script>
-  const classNameMenu =
-    'absolute right-0 shadow-left bg-neutro pr-2 mt-[66px] md:mt-0 h-[100vh] md:h-fit space-y-5 md:space-y-0 transition-transform md:relative flex flex-col md:flex-row md:items-center items-end';
-
-  const buttons = document.querySelectorAll('[data-burger-menu]');
-
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const menu = document.getElementById('menu');
-      if (menu) {
-        const hide = menu?.getAttribute('aria-checked') === 'false';
-
-        menu.className = `${classNameMenu} ${hide ? 'translate-x-0' : 'translate-x-36'}`;
-
-        menu?.setAttribute('aria-checked', hide.toString());
-      }
-    });
-  });
-</script>
-
 <nav
   id="menu-bar"
+  transition:persist
   class="fixed shadow-lg md:shadow-none flex justify-between w-full px-2 lg:px-24 py-6 bg-neutro z-50 transition-transform"
 >
   <SelectorLanguage value={i18next.language as 'es' | 'en'} client:visible />
@@ -81,11 +62,11 @@ import Burguer from '@/svg/burguer.astro';
   <div
     id="menu"
     aria-checked="false"
-    class="absolute bg-neutro right-0 translate-x-36 md:translate-x-0 eft mr-2 h-[100vh] md:h-fit space-y-6 md:space-y-0 md:relative flex flex-col md:flex-row md:items-center"
+    class="absolute z-50 bg-neutro right-0 translate-x-36 md:translate-x-0 eft mr-2 h-[100vh] md:h-fit space-y-6 md:space-y-0 md:relative flex flex-col md:flex-row md:items-center"
   >
     {
       navigation.map(({ name, href }, index) => (
-        <a href={localizePath(href)}>
+        <a href={localizePath(href)} data-menu-option>
           <div class="flex text-xs text-neon-green tracking-widest md:px-4 py-4 md:py-2">
             {padStart(index + 1)}.
             <p class="text-xs text-white hover:text-neon-green pl-1">
@@ -103,6 +84,7 @@ import Burguer from '@/svg/burguer.astro';
       {t('resume')}
     </a>
   </div>
+  <script src="./NavBar"></script>
 </nav>
 
 <div class="hidden md:fixed md:flex items-end bottom-0 left-[6.5%]">
