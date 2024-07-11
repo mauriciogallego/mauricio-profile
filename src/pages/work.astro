@@ -1,12 +1,12 @@
 ---
-import { changeLanguage } from "i18next";
-import Layout from "@/layouts/Layout.astro";
-import Title from "@/components/astro/Title/Title.astro";
-import ProjectLeft from "@/components/astro/Project/ProjectLeft.astro";
-import ProjectRight from "@/components/astro/Project/ProjectRight.astro";
-import projects from "@/data/projects.json";
+import { changeLanguage } from 'i18next';
+import Layout from '@/layouts/Layout.astro';
+import Title from '@/components/astro/Title/Title.astro';
+import ProjectLeft from '@/components/astro/Project/ProjectLeft.astro';
+import ProjectRight from '@/components/astro/Project/ProjectRight.astro';
+import projects from '@/data/projects.json';
 
-changeLanguage("en");
+changeLanguage('en');
 ---
 
 <Layout>
@@ -24,6 +24,7 @@ changeLanguage("en");
                   description={item.description}
                   technologies={item.technologies}
                   working={item.workingOn}
+                  url={item.url}
                 />
               );
             }
@@ -34,6 +35,7 @@ changeLanguage("en");
                 description={item.description}
                 technologies={item.technologies}
                 working={item.workingOn}
+                url={item.url}
               />
             );
           })

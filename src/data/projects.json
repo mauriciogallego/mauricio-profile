@@ -1,6 +1,7 @@
 [
   {
     "title": "TuGarantia",
+    "url": "#",
     "img": "/src/assets/img/tugarantia.png",
     "description": "tugarantiaWorkDescription",
     "technologies": ["Next.js", "Nest.js", "Terraform", "Cypress.io"],
@@ -8,6 +9,7 @@
   },
   {
     "title": "Profile",
+    "url": "#",
     "img": "/src/assets/img/profile.png",
     "description": "profileWorkDescription",
     "technologies": ["React.js", "Astro.build", "Tailwind"],
@@ -15,6 +17,7 @@
   },
   {
     "title": "Basapp",
+    "url": "https://basapp-replatform.vercel.app/login",
     "img": "/src/assets/img/basapp.png",
     "description": "basappWorkDescription",
     "technologies": [
@@ -28,6 +31,7 @@
   },
   {
     "title": "Renová tu vestidor",
+    "url": "https://apps.apple.com/us/app/renova-tu-vestidor/id1110486509",
     "img": "/src/assets/img/renova-vestidor.png",
     "description": "vestidorWorkDescription",
     "technologies": ["React Native", "Expo", "Detox", "React-Query"],
@@ -35,6 +39,7 @@
   },
   {
     "title": "Butaca TV",
+    "url": "https://butaca.tv/",
     "img": "/src/assets/img/butaca-tv.png",
     "description": "butacaWorkDescription",
     "technologies": ["Next.js", "Videos.js", "React-Query", "Cypress.io"],
@@ -42,6 +47,7 @@
   },
   {
     "title": "Banco Galicia",
+    "url": "https://www.galicia.ar/empresas/office-banking",
     "img": "/src/assets/img/galicia.png",
     "description": "galiciaWorkDescription",
     "technologies": ["React.js", "Axios", "Chart.js"],
