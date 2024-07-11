@@ -1,0 +1,90 @@
+<script>
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+  const avatar = document.getElementById('avatar-animation');
+
+  if (!avatar) {
+    throw new Error();
+  }
+  // initialiser three.js
+  // 3 things to consider: camera, scene, render
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0xffffff, 0.5);
+
+  avatar.appendChild(renderer.domElement);
+
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    1,
+    1000,
+  );
+
+  camera.position.set(4, 5, 11);
+  camera.lookAt(0, 0, 0);
+  scene.add(camera);
+
+  const spotLight = new THREE.SpotLight(0xffffff);
+  scene.add(spotLight);
+
+  spotLight.position.set(0, 8, 4);
+  spotLight.intensity = 1.2;
+  spotLight.angle = 0.45;
+  spotLight.penumbra = 0.3;
+
+  spotLight.castShadow = true;
+
+  const ambientLight = new THREE.AmbientLight(0x999999);
+  scene.add(ambientLight);
+
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  directionalLight.position.set(0, 10, 10);
+  scene.add(directionalLight);
+
+  /*   const texture = new THREE.TextureLoader().load(
+    '/avatar/textures/ReadyPlayerMe-Avatar.png',
+  );
+
+  const material = new THREE.MeshStandardMaterial({
+    map: texture,
+  }); */
+
+  const loader = new GLTFLoader();
+  loader.setPath('/avatar/');
+  loader.load(
+    'avatar_mauricio.glb',
+    (glb) => {
+      const mesh = glb.scene;
+
+      mesh.position.set(0, -3.05, -1);
+      mesh.scale.setScalar(5);
+      mesh.traverse((node) => {
+        if (node) {
+          node.castShadow = true;
+        }
+      });
+      scene.add(mesh);
+    },
+    function (xhr) {
+      console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+    },
+    function (error) {
+      console.log(error);
+      console.log('An error happened');
+    },
+  );
+
+  function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  }
+  animate();
+</script>
+
+<div id="avatar-animation"></div>
