@@ -10,8 +10,8 @@ export default function SelectorLanguage({ value }: { value: 'es' | 'en' }) {
       }}
       value={value}
       options={[
-        { label: '🇬🇧', value: '/en' },
-        { label: '🇨🇴', value: '' },
+        { label: 'EN', flag: '🇬🇧', value: '/en' },
+        { label: 'ES', flag: '🇨🇴', value: '' },
       ]}
     />
   );

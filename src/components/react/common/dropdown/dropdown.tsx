@@ -5,6 +5,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { flags } from '@/constants';
 
 type Option = {
+  flag?: string;
   label: string;
   value: string;
 };
@@ -26,9 +27,9 @@ export default function Dropdown({
   return (
     <Menu as="div" className="relative inline-block text-right">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold tracking-widest text-white-light hover:text-neon-green ring-1 ring-inset ring-white hover:ring-neon-green">
+        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md px-2 py-1 text-2xl font-semibold tracking-widest text-white-light hover:text-neon-green ring-1 ring-inset ring-white hover:ring-neon-green">
           {result}
-          <ChevronDownIcon className="-mr-1 h-5 w-5" aria-hidden="true" />
+          <ChevronDownIcon className="-mr-1 h-5 w-5 mt-1" aria-hidden="true" />
         </Menu.Button>
       </div>
 
@@ -43,7 +44,7 @@ export default function Dropdown({
       >
         <Menu.Items className="absolute left-0 z-10 mt-2 w-16 origin-top-left rounded-md focus:outline-none">
           <div className="py-1">
-            {options.map(({ label, value }) => (
+            {options.map(({ label, value, flag }) => (
               <Menu.Item
                 as="button"
                 key={value}
@@ -51,9 +52,12 @@ export default function Dropdown({
                 onClick={() => onclick(value)}
               >
                 {() => (
-                  <p className="px-3 py-2 cursor-pointer text-3xl hover:bg-neon-green rounded-md">
-                    {label}
-                  </p>
+                  <div className="flex items-center hover:bg-neon-green rounded-md space-x-2 p-1 group">
+                    <p className="cursor-pointer text-sm group-hover:text-neutro text-white">
+                      {label}
+                    </p>
+                    <p className="cursor-pointer text-3xl">{flag}</p>
+                  </div>
                 )}
               </Menu.Item>
             ))}
