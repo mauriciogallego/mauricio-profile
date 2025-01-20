@@ -1,10 +1,10 @@
 ---
-import { changeLanguage, t } from "i18next";
-import Layout from "@/layouts/Layout.astro";
-import Title from "@/components/astro/Title/Title.astro";
-import { technologies } from "@/constants";
+import { changeLanguage, t } from 'i18next';
+import Layout from '@/layouts/Layout.astro';
+import Title from '@/components/astro/Title/Title.astro';
+import { technologies } from '@/constants';
 
-changeLanguage("en");
+changeLanguage('en');
 ---
 
 <Layout>
@@ -25,7 +25,11 @@ changeLanguage("en");
     <p
       class="text-white-dark font-thin md:w-1/2 tracking-wider mt-5 leading-8 animate-fade-up"
     >
-      {t('aboutMyself')}<span class="text-neon-green">Sysgarage.</span>
+      {t('aboutMyself')}<a
+        class="text-neon-green font-bold"
+        target="_blank"
+        href="https://sysgarage.com/">Sysgarage.</a
+      >
     </p>
   </div>
   <div class="mb-28">
