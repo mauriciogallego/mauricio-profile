@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import { t } from 'i18next';
 
-const { title, description, technologies, image, working } = Astro.props;
+const { title, description, technologies, image, working, url } = Astro.props;
 // search for all existing images on the path
 const images = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/img/*.{jpeg,jpg,png,gif}',
@@ -15,7 +15,7 @@ if (!images[image])
 ---
 
 <div class="relative mt-10 min-h-[380px]">
-  <div class="lg:absolute right-0">
+  <a target="_blank" href={url} class="lg:absolute right-0">
     <Image
       class="object-cover drop-shadow-2xl rounded transition-opacity border-[0.2px] border-white duration-300 opacity-75 hover:opacity-100 mix-blend-plus-multiply hover:mix-blend-normal before:mix-blend-screen"
       src={images[image]()}
@@ -24,7 +24,7 @@ if (!images[image])
       densities={[1.5, 2]}
       height={360}
     />
-  </div>
+  </a>
   <div
     class="mt-4 lg:mt-0 lg:absolute top-12 left-0 min-h-[250px] lg:w-1/2 space-y-4"
   >
