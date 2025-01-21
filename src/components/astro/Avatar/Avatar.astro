@@ -7,7 +7,6 @@
   const width = window.innerWidth / 4;
   const height = window.innerHeight / 1.5;
 
-  console.log({ width, height });
   if (!avatar) {
     throw new Error();
   }
@@ -15,6 +14,7 @@
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setClearColor(0xfffff, 0); // Light gray background
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -30,7 +30,9 @@
   const camera = new THREE.PerspectiveCamera(75, width / height, 1, 1000);
 
   camera.position.set(1, 4.9, 11);
-  camera.lookAt(-2, 0, 0);
+  camera.aspect = width / height;
+  camera.lookAt(-1, 1, 0);
+  camera.updateProjectionMatrix();
   scene.add(camera);
 
   // SpotLight for focused lighting
@@ -94,22 +96,7 @@
       mesh.traverse((node: any) => {
         if (node.isBone) {
           const bone = node as THREE.Bone;
-
           bones.set(bone.name, bone); // Add bones to the map
-          // putting in the right position (Right)
-          if (bone.name === 'RightForeArm') {
-            bone.rotation.x = Math.PI / 5;
-            bone.rotation.z = -Math.PI / 6;
-          }
-
-          // putting in the right position (Left)
-          if (bone.name === 'LeftArm') {
-            bone.rotation.x = Math.PI / 2.5;
-            bone.rotation.y = Math.PI / 6;
-          }
-          if (bone.name === 'LeftForeArm') {
-            bone.rotation.x = Math.PI / 5;
-          }
         }
 
         if (node.isMesh) {
@@ -119,14 +106,13 @@
 
         const material = node.material;
         if (material && material.isMeshStandardMaterial) {
-          material.metalness = 0.1; // Slight metallic look
-          material.roughness = 0.5; // Semi-smooth surface
           material.envMapIntensity = 1.0; // Reflective lighting intensity
         }
       });
 
       scene.add(mesh);
 
+      initialPosition();
       animateSayHello();
     },
     function (xhr) {
@@ -140,87 +126,138 @@
 
   // Handle Window Resizing
   window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    const width = window.innerWidth / 4;
+    const height = window.innerHeight / 1.5;
+
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    renderer.setSize(width, height);
+
+    // Match screen resolution
+    renderer.setPixelRatio(window.devicePixelRatio);
   });
 
   function animateSayHello() {
+    const repeat = 5;
+    const defaultAnimation = {
+      duration: 0.5,
+      ease: 'none',
+    };
+
     if (bones.size > 0) {
       // Get the bones for the arm and forearm
       const rightArmBone = bones.get('RightArm');
-      const rightForeArmBone = bones.get('RightForeArm'); // Corrected name
-      const rightHand = bones.get('RightHand'); // Corrected name
+      const rightForeArmBone = bones.get('RightForeArm');
+      const rightHand = bones.get('RightHand');
 
       if (rightArmBone && rightForeArmBone) {
         // Animate the RightArm to raise
 
         gsap.to(rightArmBone.rotation, {
-          x: Math.PI / 5, // Raise RightArm slightly
-          ease: 'power2.in',
-          onComplete: () => {
+          ...defaultAnimation,
+          x: Math.PI / 10, // Raise RightArm slightly
+          y: -Math.PI / 10, // Raise RightArm slightly
+          z: -Math.PI / 7, // Raise RightArm slightly
+          onStart: () => {
             gsap.to(rightForeArmBone.rotation, {
-              x: -Math.PI / 2,
-              ease: 'power2.out',
+              ...defaultAnimation,
+              x: Math.PI / 3,
+              z: -Math.PI / 2,
+              y: Math.PI / 4,
+            });
+          },
+          onComplete: () => {
+            gsap.to(rightArmBone.rotation, {
+              ...defaultAnimation,
+              x: Math.PI / 3, // Raise RightArm slightly
+              y: Math.PI / 12, // Raise RightArm slightly
+              z: -Math.PI / 8,
               onStart: () => {
-                gsap.to(rightArmBone.rotation, {
-                  x: Math.PI / 3, // Raise RightArm slightly
-                  ease: 'power2.out',
+                gsap.to(rightForeArmBone.rotation, {
+                  ...defaultAnimation,
+                  x: -Math.PI / 10,
+                });
+              },
+              onComplete: () => {
+                gsap.to(rightForeArmBone.rotation, {
+                  ...defaultAnimation,
+                  duration: 1.2,
+                  z: -Math.PI / 2.5,
+                  yoyo: true,
+                  repeat,
+                  onStart: () => {
+                    gsap.to(rightHand.rotation, {
+                      ...defaultAnimation,
+                      z: Math.PI / 5,
+                      duration: 1.2,
+                      yoyo: true,
+                      repeat,
+                    });
+                  },
+                  onComplete: () => {
+                    initialPosition();
+                  },
                 });
               },
             });
           },
-        });
-
-        gsap.to(rightForeArmBone.rotation, {
-          y: Math.PI / 3,
-          duration: 1,
-          ease: 'power2.out',
-          delay: 1,
-        });
-
-        gsap.to(rightForeArmBone.rotation, {
-          z: -Math.PI / 3,
-          yoyo: true,
-          repeat: 4, // Infinite loop
-          duration: 1,
-          ease: 'sine.inOut',
-          delay: 1.5,
-        });
-
-        gsap.to(rightHand.rotation, {
-          z: 0.5, // Rotate hand
-          duration: 1.9,
-          yoyo: true,
-          repeat: 4, // Infinite loop
-          ease: 'sine.inOut',
         });
       }
 
       const torsoBone = bones.get('Spine2');
       const headBone = bones.get('Head');
 
-      if (torsoBone && headBone) {
-        gsap.to(torsoBone.rotation, {
-          y: Math.PI / 18, // Slight body twist
-          duration: 1.5,
-          yoyo: true,
-          repeat: 4,
-          ease: 'sine.inOut',
-        });
-      }
-
-      if (headBone) {
-        gsap.to(headBone.rotation, {
-          y: -Math.PI / 12, // Slight head tilt
-          duration: 1.5,
-          yoyo: true,
-          repeat: 4,
-          ease: 'sine.inOut',
-        });
-      }
+      gsap.to(torsoBone.rotation, {
+        y: Math.PI / 18, // Slight body twist
+        duration: 1.2,
+        yoyo: true,
+        repeat,
+        ease: 'power2.inOut',
+        onStart: () => {
+          gsap.to(headBone.rotation, {
+            y: -Math.PI / 12, // Slight head tilt
+            duration: 1.2,
+            yoyo: true,
+            repeat,
+            ease: 'power2.inOut',
+          });
+        },
+      });
     }
   }
+
+  function initialPosition() {
+    const rightForeArm = bones.get('RightForeArm');
+    const rightArm = bones.get('RightArm');
+    const leftArm = bones.get('LeftArm');
+    const leftForeArm = bones.get('LeftForeArm');
+
+    rightForeArm.rotation.x = Math.PI / 5;
+    rightForeArm.rotation.z = -Math.PI / 6;
+
+    rightArm.rotation.x = Math.PI / 3;
+
+    leftArm.rotation.x = Math.PI / 2.5;
+    leftArm.rotation.y = Math.PI / 6;
+
+    leftForeArm.rotation.x = Math.PI / 5;
+
+    /*     gsap.to(rightArm.position, {
+      x: Math.PI / 3,
+      ease: 'none',
+    });
+    gsap.to(leftArm.position, {
+      x: Math.PI / 2.5,
+      y: Math.PI / 6,
+      ease: 'none',
+    });
+    gsap.to(leftForeArm.position, {
+      x: Math.PI / 5,
+      ease: 'none',
+    }); */
+  }
+
   function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
