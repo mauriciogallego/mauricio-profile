@@ -43,6 +43,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --immutable
+        env:
+          CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
 
       - name: Run Tests for app-backend-e2e
         run: yarn test:e2e:headless
