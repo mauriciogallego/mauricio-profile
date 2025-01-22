@@ -24,6 +24,7 @@ export default () => {
           of={works}
           render={(item, index) => (
             <button
+              key={index}
               className={setClassName(index)}
               onClick={() => setTab(index)}
             >
@@ -44,8 +45,11 @@ export default () => {
         <div className="md:w-4/5 space-y-2">
           <Each
             of={works[tab].items}
-            render={(item) => (
-              <li className="flex font-thin items-center justify-start text-white-dark before:text-neon-green before:content-['▹'] before:text-[8px] before:m-3">
+            render={(item, index) => (
+              <li
+                key={index}
+                className="flex font-thin items-center justify-start text-white-dark before:text-neon-green before:content-['▹'] before:text-[8px] before:m-3"
+              >
                 {t(item)}
               </li>
             )}

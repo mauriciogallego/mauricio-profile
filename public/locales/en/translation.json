@@ -14,7 +14,7 @@
   "calipsoDescriptionTwo": "System based with Delphi and improved with Vbscript.",
   "contact": "Contact",
   "content": "Mauricio's profile",
-  "descriptionAboutMe": "I’m Full Stack developer with 5+ years of experience building web and mobile apps.",
+  "descriptionAboutMe": "I’m Full Stack developer with {{years}} years of experience building web and mobile apps.",
   "descriptionAboutMeFour": "I am thrilled to keep learning and staying up to date on the latest technologies.",
   "descriptionAboutMeThree": "Detail-oriented with UX/UI knowledge, focused on delivering useful and meaningful products.",
   "descriptionAboutMeTwo": "Javascript and React specialist with strong BE background, interested in working on challenging projects and futher improving my professional skills. ",

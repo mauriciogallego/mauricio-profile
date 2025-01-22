@@ -9,6 +9,7 @@ export const technologies = [
   { name: 'React Native', url: 'https://reactnative.dev/' },
   { name: 'Typescript', url: 'https://www.typescriptlang.org/' },
   { name: 'Sentry', url: 'https://docs.sentry.io/' },
+  { name: 'Three.js', url: 'https://threejs.org/' },
 ];
 
 export const flags = {
