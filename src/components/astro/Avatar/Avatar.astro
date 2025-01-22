@@ -25,9 +25,8 @@
     bones: new Map(),
   };
 
-  const avatar = document.getElementById('avatar-animation');
-
   function setUp() {
+    const avatar = document.getElementById('avatar-animation');
     if (!avatar) {
       throw new Error();
     }
@@ -40,8 +39,6 @@
     }
 
     const lightSpots = initSpotLights();
-
-    avatar.appendChild(state.renderer.domElement);
 
     // Initialize Camera
     state.scene.add(state.camera);
@@ -98,6 +95,8 @@
     );
 
     window.removeEventListener('resize', updateSize);
+    console.log(state.renderer.domElement);
+    avatar.appendChild(state.renderer.domElement);
   }
 
   function animate() {
@@ -133,12 +132,15 @@
   });
 
   document.addEventListener('astro:before-swap', () => {
+    const avatar = document.getElementById('avatar-animation');
+
     if (state.animateId) {
       cancelAnimationFrame(state.animateId);
     }
 
     if (state.renderer) {
-      state.renderer.dispose(); // Dispose of the renderer
+      state.renderer.dispose();
+      avatar?.removeChild(state.renderer.domElement);
     }
 
     if (state.scene) {
