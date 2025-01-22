@@ -8,7 +8,7 @@ on:
 
 permissions:
   actions: read
-  contents: read
+  contents: write # Allow actions to write back to the repository
 
 jobs:
   main:
@@ -21,30 +21,21 @@ jobs:
       - name: Cache Yarn Dependencies
         uses: actions/cache@v3
         with:
-          path: |
-            .yarn/cache
-            node_modules
+          path: .yarn/cache
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      # Cache Cypress binary
-      - name: Cache Cypress binary
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/Cypress
-          key: ${{ runner.os }}-cypress-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-cypress-
-
       - uses: actions/setup-node@v4
         with:
           node-version: 18.19.1
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install --immutable
-        env:
-          CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
 
-      - name: Run Tests for app-backend-e2e
-        run: yarn test:e2e:headless
+      # Run Cypress tests
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
