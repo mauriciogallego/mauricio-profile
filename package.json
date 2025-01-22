@@ -8,7 +8,10 @@
     "start": "astro dev",
     "build": "npm run i18 && astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "cypress:headless": "cypress run",
+    "test:e2e": "yarn build && start-server-and-test start http://localhost:4321 cypress",
+    "test:e2e:headless": "yarn build && start-server-and-test start http://localhost:4321 cypress:headless"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -35,6 +38,7 @@
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
-    "@types/three": "^0.172.0"
+    "@types/three": "^0.172.0",
+    "start-server-and-test": "^2.0.10"
   }
 }

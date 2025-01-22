@@ -30,11 +30,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 18.18.0
+          node-version: 18.19.1
           cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install --immutable
 
       - name: Run Tests for app-backend-e2e
-        run: yarn test:backend --verbose
+        run: yarn test:e2e:headless
