@@ -34,11 +34,5 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
-      # Run Cypress tests
-      - name: Run Cypress Tests
-        uses: cypress-io/github-action@v4
-        with:
-          browser: chrome
-
       - name: Run Tests for e2e
         run: yarn test:e2e:headless
