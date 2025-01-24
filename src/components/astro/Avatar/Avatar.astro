@@ -122,7 +122,7 @@
 
   document.addEventListener('astro:page-load', () => {
     const path = window.location.pathname; // Get the current URL as a URL object
-    if (path == '/') {
+    if (path == '/' || path == '/es/') {
       setUp();
       state.animateId = requestAnimationFrame(animate);
 
