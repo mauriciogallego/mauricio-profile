@@ -4,9 +4,31 @@ import { gsap } from 'gsap';
 const defaultAnimation = {
   ease: 'none',
 };
-const width = window.innerWidth / 4;
-const height = window.innerHeight / 1.5;
 const repeat = 4;
+
+export function resizeAvatar() {
+  const { innerWidth, innerHeight } = window;
+
+  let height = innerHeight / 2;
+  let width = innerWidth / 2;
+
+  if (innerWidth > 640) {
+    height = innerHeight / 2;
+    width = innerWidth / 3;
+  }
+
+  if (innerWidth > 768) {
+    height = innerHeight / 1.5;
+    width = innerWidth / 3;
+  }
+
+  if (innerWidth > 1024) {
+    height = innerHeight / 1.5;
+    width = innerWidth / 4;
+  }
+
+  return { width, height };
+}
 
 export function initialPosition(bones: Map<string, THREE.Bone>) {
   const rightForeArm = bones.get('RightForeArm');
@@ -134,6 +156,8 @@ export function playAnimations(bones: Map<string, THREE.Bone>) {
 
 export function initRender() {
   // Initialize Renderer
+  const { width, height } = resizeAvatar();
+
   const renderer = new THREE.WebGLRenderer({
     antialias: true,
     alpha: true,
@@ -160,6 +184,7 @@ export function initScene() {
 }
 
 export function initCamera() {
+  const { width, height } = resizeAvatar();
   // Initialize Camera
   const camera = new THREE.PerspectiveCamera(75, width / height, 1, 1000);
 
