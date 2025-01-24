@@ -11,7 +11,7 @@ permissions:
   contents: write # Allow actions to write back to the repository
 
 jobs:
-  main:
+  e2e-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -39,3 +39,6 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
+
+      - name: Run Tests for e2e
+        run: yarn test:e2e:headless
