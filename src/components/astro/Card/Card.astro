@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import '../../../styles/global.css';
+
+const { title, description, image, url } = Astro.props;
+
+// search for all existing images on the path
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/img/*.{jpeg,jpg,png,gif}',
+);
+
+if (!images[image])
+  throw new Error(
+    `"${image}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`,
+  );
+---
+
+<div class="p-4 border-dotted card-effect">
+  <a target="_blank" href={url}>
+    <Image
+      class="border border-white object-cover drop-shadow-2xl rounded transition-opacity duration-300 mix-blend-plus-multiply hover:mix-blend-normal before:mix-blend-screen"
+      src={images[image]()}
+      alt={`img-${title}`}
+      width={640.8}
+      densities={[1.5, 2]}
+      height={360}
+    />
+    <p class="mt-4 font-semibold tracking-wider text-white text-xs">
+      {title.toUpperCase()}
+    </p>
+  </a>
+</div>

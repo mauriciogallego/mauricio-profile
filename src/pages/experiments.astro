@@ -1,0 +1,30 @@
+---
+import { changeLanguage, t } from 'i18next';
+import Title from '@/components/astro/Title/Title.astro';
+import Card from '@/components/astro/Card/Card.astro';
+import Layout from '@/layouts/Layout.astro';
+
+changeLanguage('en');
+---
+
+<Layout>
+  <div class="pt-[100px]">
+    <Title header="ownExperiments" />
+    <div class="mt-10 border-2 border-neon-green border-b-0 rounded-t-xl">
+      <p class="p-3 text-white font-thin">{t('experimentalDescription')}</p>
+    </div>
+    <div
+      class="w-full grid grid-cols-3 place-items-center border-2 border-neon-green"
+    >
+      <Card
+        image="/src/assets/img/flappy-bird.jpg"
+        title="flappy bird"
+        url="experiments/flappy-bird"
+      />
+    </div>
+    <div
+      class="h-[2vh] border-2 border-neon-green border-t-0 rounded-b-xl mb-5"
+    >
+    </div>
+  </div>
+</Layout>

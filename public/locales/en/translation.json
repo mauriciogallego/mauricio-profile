@@ -1,4 +1,5 @@
 {
+  "WhereIWork": "Where I've Worked",
   "about": "About me",
   "aboutMyself": "I'm a software developer specializing in building exceptional digital experiences. Currently, I'm focused on building products at ",
   "accentureDescription": "Collaborated with Front-end tasks using React.js, React Context and Redux.",
@@ -21,11 +22,14 @@
   "descriptionContact": "Although I'm actually not looking for new opportunities, I'm always open to hearing from you. Contact me, I'll try my best to get back to you",
   "email": "mauriciogallegoavi@gmail.com",
   "experience": "Experience",
+  "experimentalDescription": "Something that I've learnt to do",
+  "experiments": "Experiments",
   "galiciaWorkDescription": "The Banco Galicia app is a comprehensive tool for managing finances on mobile devices. It enables banking operations like transfers, bill payments, balance inquiries, and offers features such as USD purchases, credit/debit card management, and access to exclusive client promotions",
   "getInTouch": "Get in touch",
   "greetings": "Hi, my name is",
   "mainInfo": "and I build things for the web.",
   "ops": "Upsss",
+  "ownExperiments": "Own Experiments",
   "profileWorkDescription": "application designed to show the portfolio of the applications I have made over time.",
   "publicisDescription": "Responsible for Front-End tasks using React.js and React Context.",
   "publicisDescriptionFour": "Choosing AWS to build the app with docker.",
@@ -45,7 +49,6 @@
   "urlNotFoud": "You seem to be in the wrong place",
   "vestidorWorkDescription": " An application designed to facilitate the process of wardrobe renewal. It offers a platform where users can easily buy, sell or exchange fashion clothing and accessories.",
   "whatIsNext": "What's next?",
-  "WhereIWork": "Where I've Worked",
   "work": "Work",
   "workingOn": "Working on"
 }
