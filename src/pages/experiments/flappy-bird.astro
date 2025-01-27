@@ -1,0 +1,19 @@
+---
+const title = 'Flappy Bird Game';
+---
+
+<html>
+  <head>
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="w-full bg-blue-300">
+      <canvas id="gameCanvas" width="400" height="600"></canvas>
+    </div>
+    <script>
+      import { initializeGame } from './game';
+
+      initializeGame();
+    </script>
+  </body>
+</html>
