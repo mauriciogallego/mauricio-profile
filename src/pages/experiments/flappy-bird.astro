@@ -1,4 +1,6 @@
 ---
+import CanvasGame from '@/components/astro/CanvasGame/CanvasGame.astro';
+
 const title = 'Flappy Bird Game';
 ---
 
@@ -7,13 +9,8 @@ const title = 'Flappy Bird Game';
     <title>{title}</title>
   </head>
   <body>
-    <canvas id="gameCanvas" width="400" height="600" class="bg-[#6EC5CE]"
-    ></canvas>
-    <button id="restart-game">Restart</button>
-    <script>
-      import { initializeGame } from './game';
-
-      initializeGame();
-    </script>
+    <div class="bg-[#282B31] w-full h-screen flex justify-center items-center">
+      <CanvasGame />
+    </div>
   </body>
 </html>

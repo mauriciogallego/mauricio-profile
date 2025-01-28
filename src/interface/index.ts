@@ -4,4 +4,5 @@ export type StateFlappyBird = {
   score: number;
   animationId: number | null;
   start: boolean;
+  restart: boolean;
 };
