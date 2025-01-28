@@ -1,4 +1,5 @@
 {
+  "WhereIWork": "Donde he trabajado",
   "about": "Acerca de mí",
   "aboutMyself": "Soy un desarrollador de software especializado en crear experiencias digitales excepcionales. Actualmente, estoy centrado en la creación de productos en ",
   "accentureDescription": "Colaboración en tareas Front-end utilizando React.js, React Context y Redux.",
@@ -21,11 +22,14 @@
   "descriptionContact": "Aunque actualmente no estoy buscando nuevas oportunidades, siempre estoy abierto a escucharte. Ponte en contacto conmigo, ¡haré todo lo posible por responderte!",
   "email": "mauriciogallegoavi@gmail.com",
   "experience": "Experiencia",
+  "experimentalDescription": "Cosas que he aprendido hacer",
+  "experiments": "Experimentos",
   "galiciaWorkDescription": "La aplicación de Banco Galicia es una herramienta integral para el manejo de las finanzas en dispositivos móviles. Permite realizar operaciones bancarias como transferencias, pagos de facturas, consultas de saldo, y ofrece funcionalidades como compras en USD, gestión de tarjetas de crédito/débito y acceso a promociones exclusivas para clientes.",
   "getInTouch": "Contactame",
   "greetings": "Hola, mi nombre es",
   "mainInfo": "y construyo cosas para la web.",
   "ops": "Upsss",
+  "ownExperiments": "Experimentos propios",
   "profileWorkDescription": "aplicación diseñada para mostrar la cartera de las aplicaciones que he realizado a lo largo del tiempo.",
   "publicisDescription": "Responsable de las tareas Front-End utilizando React.js y React Context.",
   "publicisDescriptionFour": "Elección de AWS para construir la aplicación con docker.",
@@ -45,7 +49,6 @@
   "urlNotFoud": "Parece que estás en el lugar equivocado",
   "vestidorWorkDescription": "Una aplicación diseñada para facilitar el proceso de renovación del guardarropa. Ofrece una plataforma donde los usuarios pueden comprar, vender o intercambiar ropa y accesorios de moda de manera sencilla",
   "whatIsNext": "Que sigue?",
-  "WhereIWork": "Donde he trabajado",
   "work": "Trabajo",
   "workingOn": "Actualmente"
 }

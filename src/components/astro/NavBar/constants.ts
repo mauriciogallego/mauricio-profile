@@ -12,6 +12,10 @@ export const navigation = [
     href: '/work',
   },
   {
+    name: 'experiments',
+    href: '/experiments',
+  },
+  {
     name: 'contact',
     href: '/contact',
   },
