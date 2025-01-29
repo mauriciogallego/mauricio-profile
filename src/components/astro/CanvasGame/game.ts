@@ -1,5 +1,13 @@
 import type { StateFlappyBird } from '@/interface';
 
+const background = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/img/flappy-bird-background.jpg',
+);
+
+const bird = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/img/bird.png',
+);
+
 export class FlappyGame {
   background: HTMLImageElement;
   bird: HTMLImageElement;
@@ -26,12 +34,16 @@ export class FlappyGame {
 
   constructor() {
     this.background = new Image();
-    this.background.src = '/src/assets/img/flappy-bird-background.jpg'; // Provide the bird image path
-    this.background.onload = this.onLoadBackground.bind(this);
+    background['/src/assets/img/flappy-bird-background.jpg']().then((res) => {
+      this.background.src = res.default.src;
+      this.background.onload = this.onLoadBackground.bind(this);
+    });
 
     this.bird = new Image();
-    this.bird.src = '/src/assets/img/bird.png'; // Provide the bird image path
-    this.bird.onload = this.onLoadBird.bind(this);
+    bird['/src/assets/img/bird.png']().then((res) => {
+      this.bird.src = res.default.src;
+      this.bird.onload = this.onLoadBird.bind(this);
+    });
   }
 
   private onLoadBackground() {
