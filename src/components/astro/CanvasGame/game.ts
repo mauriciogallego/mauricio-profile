@@ -28,10 +28,13 @@ export class FlappyGame {
     this.background = new Image();
     this.background.src = '/src/assets/img/flappy-bird-background.jpg'; // Provide the bird image path
     this.background.onload = this.onLoadBackground.bind(this);
+    this.background.onerror = () =>
+      console.error('Failed to load background image');
 
     this.bird = new Image();
     this.bird.src = '/src/assets/img/bird.png'; // Provide the bird image path
     this.bird.onload = this.onLoadBird.bind(this);
+    this.bird.onerror = () => console.error('Failed to load bird image');
   }
 
   private onLoadBackground() {
