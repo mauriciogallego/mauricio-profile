@@ -100,7 +100,7 @@ export class FlappyGame {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const backgroundHeight = canvas.height / 4.5;
-    console.log();
+
     ctx.drawImage(
       this.background,
       0,
@@ -135,7 +135,6 @@ export class FlappyGame {
       const random = Math.random();
       const pipeY = random * (sky - this.pipeGap);
       this.pipes.push({ x: canvas.width + 1, y: pipeY, random });
-      console.log(this.pipes);
     }
 
     for (let i = this.pipes.length - 1; i >= 0; i--) {
