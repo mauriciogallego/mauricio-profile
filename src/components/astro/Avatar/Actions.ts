@@ -10,7 +10,7 @@ export function resizeAvatar() {
   const { innerWidth, innerHeight } = window;
 
   let height = innerHeight / 2;
-  let width = innerWidth / 2;
+  let width = innerWidth / 1.1;
 
   if (innerWidth > 640) {
     height = innerHeight / 2;
