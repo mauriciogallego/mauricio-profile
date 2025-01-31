@@ -9,37 +9,6 @@ import Clibboard from '@/components/astro/Clibboard/Clibboard.astro';
 import Burguer from '@/svg/burguer.astro';
 ---
 
-<script is:inline>
-  const classNameNav =
-    'fixed flex justify-between w-full px-2 lg:px-24 py-6 bg-neutro z-50 transition-transform';
-  let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
-  const scrollDown = '-translate-y-full';
-  const scrollUp = 'translate-y-0 shadow-2xl';
-
-  window.onscroll = function () {
-    if (window.innerWidth >= '768') {
-      window.addEventListener(
-        'scroll',
-        function handleScroll() {
-          const scrollTopPosition = window.scrollY;
-
-          if (scrollTopPosition > lastScrollTop) {
-            document.getElementById('menu-bar').className =
-              `${classNameNav} ${scrollDown}`;
-          } else if (scrollTopPosition < lastScrollTop) {
-            document.getElementById('menu-bar').className =
-              `${classNameNav} ${scrollUp}`;
-          } else if (window.scrollY == 0) {
-            document.getElementById('menu-bar').className = `${classNameNav}`;
-          }
-          lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
-        },
-        false,
-      );
-    }
-  };
-</script>
-
 <nav
   id="menu-bar"
   transition:persist
@@ -84,7 +53,6 @@ import Burguer from '@/svg/burguer.astro';
       {t('resume')}
     </a>
   </div>
-  <script src="./NavBar"></script>
 </nav>
 
 <div class="hidden md:fixed md:flex items-end bottom-0 left-[6.5%]">
@@ -100,3 +68,36 @@ import Burguer from '@/svg/burguer.astro';
     <slot />
   </div>
 </div>
+
+<script is:inline>
+  const classNameNav =
+    'fixed flex justify-between w-full px-2 lg:px-24 py-6 bg-neutro z-50 transition-transform';
+  let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollDown = '-translate-y-full';
+  const scrollUp = 'translate-y-0 shadow-2xl';
+
+  window.onscroll = function () {
+    if (window.innerWidth >= '768') {
+      window.addEventListener(
+        'scroll',
+        function handleScroll() {
+          const scrollTopPosition = window.scrollY;
+
+          if (scrollTopPosition > lastScrollTop) {
+            document.getElementById('menu-bar').className =
+              `${classNameNav} ${scrollDown}`;
+          } else if (scrollTopPosition < lastScrollTop) {
+            document.getElementById('menu-bar').className =
+              `${classNameNav} ${scrollUp}`;
+          } else if (window.scrollY == 0) {
+            document.getElementById('menu-bar').className = `${classNameNav}`;
+          }
+          lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+        },
+        false,
+      );
+    }
+  };
+</script>
+
+<script src="./NavBar"></script>

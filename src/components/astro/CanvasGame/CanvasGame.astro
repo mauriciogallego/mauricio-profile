@@ -6,6 +6,27 @@
 
 <script>
   import { FlappyGame } from './game';
+  import { UAParser } from 'ua-parser-js';
+
+  const canvas = document.getElementById('gameCanvas') as HTMLCanvasElement;
+
+  if (!canvas) {
+    throw new Error('Canvas not found');
+  }
+
+  let width = 480;
+  let height = 640;
+
+  const parser = new UAParser();
+  const device = parser.getDevice();
+
+  if (device.type === 'mobile') {
+    width = window.innerWidth;
+    height = window.innerHeight;
+  }
+
+  canvas.width = width;
+  canvas.height = height;
 
   const game = new FlappyGame();
   game.initializeGame();
