@@ -52,7 +52,7 @@ export class FlappyGame {
     ctx.drawImage(
       this.background,
       0,
-      canvas.height - canvas.height / 3,
+      canvas.height - canvas.height / 3 - 5,
       canvas.width,
       canvas.height / 4.5,
     );
@@ -104,7 +104,7 @@ export class FlappyGame {
     ctx.drawImage(
       this.background,
       0,
-      canvas.height - canvas.height / 3,
+      canvas.height - canvas.height / 3 - 5,
       canvas.width,
       backgroundHeight,
     );
@@ -186,6 +186,8 @@ export class FlappyGame {
       }
     }
 
+    this.drawStripePattern();
+
     // Draw score
     ctx.fillStyle = 'white';
     ctx.font = '40px Arial';
@@ -211,6 +213,22 @@ export class FlappyGame {
       this.state.restart = false;
       this.gameLoop();
     }
+  }
+
+  private drawStripePattern() {
+    const { ctx, canvas } = this.getContext();
+
+    const y = canvas.height - canvas.height / 8.4;
+    const height = 20;
+    const border = 2;
+
+    // green stripe
+    ctx.fillStyle = '#9DE659';
+    ctx.fillRect(0, y, canvas.width, height);
+
+    // orange stripe
+    ctx.fillStyle = 'rgb(215, 167, 76, 0.35)';
+    ctx.fillRect(0, y + height, canvas.width, 10);
   }
 
   initializeGame() {
