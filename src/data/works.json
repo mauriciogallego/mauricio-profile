@@ -1,5 +1,18 @@
 [
   {
+    "name": "Insight Global",
+    "position": "Software Engineer",
+    "dates": "02/2025 - present",
+    "items": [
+      "insightGlobalDescription",
+      "insightGlobalDescriptionTwo",
+      "insightGlobalDescriptionThree",
+      "insightGlobalDescriptionFour",
+      "insightGlobalDescriptionFive",
+      "insightGlobalDescriptionSix"
+    ]
+  },
+  {
     "name": "Sysgarage",
     "position": "Full-Stack Web Developer",
     "dates": "06/2021 - 01/2025",

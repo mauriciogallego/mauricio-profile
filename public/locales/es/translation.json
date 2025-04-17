@@ -1,5 +1,4 @@
 {
-  "WhereIWork": "Donde he trabajado",
   "about": "Acerca de mí",
   "aboutMyself": "Soy un desarrollador de software especializado en crear experiencias digitales excepcionales. Actualmente, estoy centrado en la creación de productos en ",
   "accentureDescription": "Colaboración en tareas Front-end utilizando React.js, React Context y Redux.",
@@ -27,9 +26,16 @@
   "galiciaWorkDescription": "La aplicación de Banco Galicia es una herramienta integral para el manejo de las finanzas en dispositivos móviles. Permite realizar operaciones bancarias como transferencias, pagos de facturas, consultas de saldo, y ofrece funcionalidades como compras en USD, gestión de tarjetas de crédito/débito y acceso a promociones exclusivas para clientes.",
   "getInTouch": "Contactame",
   "greetings": "Hola, mi nombre es",
+  "insightGlobalDescription": "Encargado de implementar nuevas funcionalidades al sistema de pedidos de Pizza Hut, incluyendo la integración con el sistema de pagos.",
+  "insightGlobalDescriptionFive": "Desarrollo de BFF para integrar el sistema de pedidos con el back-end.",
+  "insightGlobalDescriptionFour": "Soporte al sistema de errores detectados a lo largo del tiempo",
+  "insightGlobalDescriptionSix": "Desarrollando habilidades de DevOps para la empresa",
+  "insightGlobalDescriptionThree": "Capacidad de interactuar con trabajadores multiculturales de diferentes países y áreas.",
+  "insightGlobalDescriptionTwo": "adaptación a un entorno de trabajo ágil y dinámico, donde la colaboración y la comunicación son clave para el éxito del equipo.",
   "mainInfo": "y construyo cosas para la web.",
   "ops": "Upsss",
   "ownExperiments": "Experimentos propios",
+  "pizzaHutWorkDescription": "WebApp diseñada para la compra de pizzas y productos relacionados. Permite a los usuarios personalizar sus pedidos, seleccionar opciones de entrega y realizar pagos en línea de manera segura.",
   "profileWorkDescription": "aplicación diseñada para mostrar la cartera de las aplicaciones que he realizado a lo largo del tiempo.",
   "publicisDescription": "Responsable de las tareas Front-End utilizando React.js y React Context.",
   "publicisDescriptionFour": "Elección de AWS para construir la aplicación con docker.",
@@ -49,6 +55,7 @@
   "urlNotFoud": "Parece que estás en el lugar equivocado",
   "vestidorWorkDescription": "Una aplicación diseñada para facilitar el proceso de renovación del guardarropa. Ofrece una plataforma donde los usuarios pueden comprar, vender o intercambiar ropa y accesorios de moda de manera sencilla",
   "whatIsNext": "Que sigue?",
+  "WhereIWork": "Donde he trabajado",
   "work": "Trabajo",
   "workingOn": "Actualmente"
 }
