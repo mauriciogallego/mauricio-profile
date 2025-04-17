@@ -1,11 +1,19 @@
 [
   {
-    "title": "TuGarantia",
-    "url": "#",
+    "title": "Pizza Hut",
+    "url": "https://www.pizzahut.co.uk/",
+    "img": "/src/assets/img/maverick.png",
+    "description": "pizzaHutWorkDescription",
+    "technologies": ["React.js", "Nest.js", "Terraform", "CircleCI", "AWS"],
+    "workingOn": true
+  },
+  {
+    "title": "Tu Garantia",
+    "url": "https://app.tugarantia.com.ar",
     "img": "/src/assets/img/tugarantia.png",
     "description": "tugarantiaWorkDescription",
     "technologies": ["Next.js", "Nest.js", "Terraform", "Cypress.io"],
-    "workingOn": true
+    "workingOn": false
   },
   {
     "title": "Profile",
