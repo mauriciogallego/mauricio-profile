@@ -5,8 +5,8 @@ describe('template spec', () => {
     cy.contains('Hi, my name is');
     cy.get('h1').contains('Mauricio Gallego');
     cy.get('a')
-      .contains('Sysgarage.')
-      .should('have.attr', 'href', 'https://sysgarage.com/');
+      .contains('Insight Global.')
+      .should('have.attr', 'href', 'https://insightglobal.com/');
 
     cy.get('canvas').should('exist');
   });
