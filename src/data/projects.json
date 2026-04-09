@@ -8,6 +8,14 @@
     "workingOn": true
   },
   {
+    "title": "Chroma Gallery",
+    "url": "https://www.chromagaleria.com/app/home",
+    "img": "/src/assets/img/chroma-gallery.png",
+    "description": "chromaGalleryWorkDescription",
+    "technologies": ["Next.js", "React.js", "Tailwind", "Vercel"],
+    "workingOn": false
+  },
+  {
     "title": "Tu Garantia",
     "url": "https://app.tugarantia.com.ar",
     "img": "/src/assets/img/tugarantia.png",
