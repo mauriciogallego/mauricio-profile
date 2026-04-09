@@ -1,11 +1,19 @@
 [
   {
+    "title": "Call Center Pizza Hut",
+    "url": "https://ph-mx.maverick-call-center.prod.phdt.io/",
+    "img": "/src/assets/img/call-center-ph.png",
+    "description": "callCenterPizzaHutWorkDescription",
+    "technologies": ["React.js", "Nest.js", "Terraform", "CircleCI", "AWS", "Microservices"],
+    "workingOn": true
+  },
+  {
     "title": "Pizza Hut",
     "url": "https://www.pizzahut.co.uk/",
     "img": "/src/assets/img/maverick.png",
     "description": "pizzaHutWorkDescription",
     "technologies": ["React.js", "Nest.js", "Terraform", "CircleCI", "AWS"],
-    "workingOn": true
+    "workingOn": false
   },
   {
     "title": "Chroma Gallery",
@@ -13,7 +21,7 @@
     "img": "/src/assets/img/chroma-gallery.png",
     "description": "chromaGalleryWorkDescription",
     "technologies": ["Next.js", "React.js", "Tailwind", "Vercel"],
-    "workingOn": false
+    "workingOn": true
   },
   {
     "title": "Tu Garantia",
